@@ -1,0 +1,141 @@
+:root {
+  /* Global — theme-independent */
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono: 'JetBrains Mono', 'IBM Plex Mono', ui-monospace, monospace;
+
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-xs: 2px;
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 16px;
+  --space-4: 24px;
+  --space-5: 32px;
+  --space-6: 48px;
+  --space-7: 64px;
+  --space-8: 96px;
+  --space-9: 128px;
+
+  --transition-fast: 150ms ease-out;
+  --transition-base: 200ms ease-out;
+
+  /* Brand */
+  --color-accent: #D9F26B;
+  --color-accent-hover: #E8FF8A;
+  --color-on-accent: #15170F;
+
+  /* -------------------------------------------------- */
+  /* Dark theme — default                               */
+  /* -------------------------------------------------- */
+
+  --color-bg: #121412;
+  --color-surface-raised: #1B1D1B;
+  --color-surface-recessed: #0E100E;
+
+  --color-border: #2E312E;
+  --color-border-hover: #3D403D;
+
+  --color-text-primary: #F2F1EC;
+  --color-text-secondary: #8C9088;
+
+  /* Glass */
+  --surface-blur: 16px;
+  --surface-blur-strong: 22px;
+
+  --surface-glass-bg: rgba(27, 29, 27, 0.55);
+
+  --surface-border-glass: rgba(242, 241, 236, 0.08);
+  --surface-border-glass-strong: rgba(242, 241, 236, 0.14);
+
+  --surface-glass-highlight: rgba(242, 241, 236, 0.05);
+
+  --surface-shadow:
+    0 4px 24px rgba(0, 0, 0, 0.28);
+
+  --accent-glow:
+    0 0 24px rgba(217, 242, 107, 0.16);
+
+  /* -------------------------------------------------- */
+  /* Hero artwork                                       */
+  /* -------------------------------------------------- */
+
+  /*
+    Separate from --color-accent because a large ASCII
+    portrait needs a softer tone than buttons/links.
+  */
+  --ascii-portrait-color: #CFEA63;
+
+  /*
+    Oversized background ASCII wordmark.
+  */
+  --hero-ghost-opacity: 0.035;
+
+  /*
+    Ambient Hero glow. Used only where atmosphere helps.
+  */
+  --hero-atmosphere-glow:
+    rgba(217, 242, 107, 0.08);
+
+  /*
+    Thin editorial annotation/transition details.
+  */
+  --hero-detail-color:
+    rgba(242, 241, 236, 0.46);
+
+  /*
+    Reveal divider.
+  */
+  --hero-divider-color:
+    rgba(217, 242, 107, 0.76);
+}
+
+/* -------------------------------------------------- */
+/* Light theme                                         */
+/* -------------------------------------------------- */
+
+[data-theme='light'] {
+  --color-bg: #F3F1EA;
+  --color-surface-raised: #FBFAF6;
+  --color-surface-recessed: #E6E2D6;
+
+  --color-border: #DAD5C7;
+  --color-border-hover: #C7C1B0;
+
+  --color-text-primary: #201F1B;
+  --color-text-secondary: #6E6A60;
+
+  /* Glass */
+  --surface-blur: 16px;
+  --surface-blur-strong: 22px;
+
+  --surface-glass-bg: rgba(251, 250, 246, 0.6);
+
+  --surface-border-glass: rgba(32, 31, 27, 0.08);
+  --surface-border-glass-strong: rgba(32, 31, 27, 0.14);
+
+  --surface-glass-highlight: rgba(255, 255, 255, 0.5);
+
+  --surface-shadow:
+    0 4px 20px rgba(32, 31, 27, 0.08);
+
+  --accent-glow:
+    0 0 20px rgba(217, 242, 107, 0.14);
+
+  /* Hero artwork */
+  --ascii-portrait-color: #53612F;
+
+  --hero-ghost-opacity: 0.065;
+
+  /*
+    No green smudge/glow in Light mode.
+    Warm backgrounds look cleaner without it.
+  */
+  --hero-atmosphere-glow: transparent;
+
+  --hero-detail-color:
+    rgba(32, 31, 27, 0.42);
+
+  --hero-divider-color:
+    rgba(83, 97, 47, 0.7);
+}

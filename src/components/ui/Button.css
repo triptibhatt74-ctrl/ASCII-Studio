@@ -1,0 +1,140 @@
+.btn {
+  --btn-notch: 8px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-4);
+  font-family: var(--font-sans);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  line-height: 1;
+  border-radius: var(--radius-xs);
+  border: 1px solid transparent;
+  clip-path: polygon(
+    0 0,
+    calc(100% - var(--btn-notch)) 0,
+    100% var(--btn-notch),
+    100% 100%,
+    var(--btn-notch) 100%,
+    0 calc(100% - var(--btn-notch))
+  );
+  transition:
+    background-color var(--transition-fast),
+    border-color var(--transition-fast),
+    color var(--transition-fast),
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast);
+  user-select: none;
+  white-space: nowrap;
+}
+
+/* -------------------------------------------------- */
+/* Primary                                              */
+/* -------------------------------------------------- */
+
+.btn-primary {
+  background-color: var(--color-accent);
+  border-color: var(--color-accent);
+  color: var(--color-on-accent);
+}
+
+.btn-primary:not(:disabled):hover {
+  background-color: var(--color-accent-hover);
+  border-color: var(--color-accent-hover);
+  transform: translateY(-1px);
+}
+
+.btn-primary:not(:disabled):active {
+  transform: translateY(0);
+  background-color: var(--color-accent);
+}
+
+/* -------------------------------------------------- */
+/* Ghost — creative-tool glass                          */
+/* -------------------------------------------------- */
+
+.btn-ghost {
+  background-color: var(--surface-glass-bg);
+  border-color: var(--surface-border-glass);
+  color: var(--color-text-primary);
+  backdrop-filter: blur(var(--surface-blur));
+  -webkit-backdrop-filter: blur(var(--surface-blur));
+}
+
+.btn-ghost:not(:disabled):hover {
+  border-color: var(--surface-border-glass-strong);
+  background-color: var(--surface-glass-bg);
+  color: var(--color-text-primary);
+  transform: translateY(-1px);
+}
+
+.btn-ghost:not(:disabled):active {
+  transform: translateY(0);
+  border-color: var(--surface-border-glass);
+}
+
+/* -------------------------------------------------- */
+/* Glyph                                                */
+/* -------------------------------------------------- */
+
+.btn__glyph {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  margin-left: var(--space-1);
+  transform: translateX(0);
+  transition: transform var(--transition-fast);
+}
+
+.btn:not(:disabled):hover .btn__glyph {
+  transform: translateX(3px);
+}
+
+/* -------------------------------------------------- */
+/* Disabled                                             */
+/* -------------------------------------------------- */
+
+.btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.btn:disabled:hover {
+  transform: none;
+}
+
+.btn:disabled .btn__glyph {
+  transform: translateX(0);
+}
+
+.btn-primary:disabled:hover {
+  background-color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+.btn-ghost:disabled:hover {
+  background-color: var(--surface-glass-bg);
+  border-color: var(--surface-border-glass);
+}
+
+/* -------------------------------------------------- */
+/* Keyboard focus (accessibility)                       */
+/* -------------------------------------------------- */
+
+.btn:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: -3px;
+}
+
+/* -------------------------------------------------- */
+/* Reduced motion                                       */
+/* -------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .btn,
+  .btn__glyph {
+    transition: none;
+  }
+}

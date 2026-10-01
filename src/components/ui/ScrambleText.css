@@ -1,0 +1,15 @@
+.scramble-text {
+  position: relative;
+  display: inline-block;
+  vertical-align: baseline;
+}
+
+.scramble-text::before {
+  content: attr(aria-label);
+  visibility: hidden;
+}
+
+.scramble-text > span {
+  position: absolute;
+  inset: 0;
+}
