@@ -1,10 +1,5 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-<<<<<<< HEAD
-import './index.css'
-import App from './App.jsx'
-
-=======
 import './styles/global.css'
 import App from './App.jsx'
 
@@ -19,7 +14,6 @@ const initialTheme = VALID_THEMES.includes(savedTheme) ? savedTheme : 'dark'
 
 document.documentElement.setAttribute('data-theme', initialTheme)
 
->>>>>>> origin/payal-frontend
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <App />
