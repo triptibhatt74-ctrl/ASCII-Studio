@@ -1,0 +1,312 @@
+:root {
+  --background: #f8f8fc;
+  --surface: #ffffff;
+
+  --lavender-light: #eeecff;
+  --lavender: #dedaff;
+
+  --accent: #6965d8;
+  --accent-hover: #5753c7;
+
+  --text: #29293a;
+  --muted: #777789;
+
+  --border: #e5e4ee;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--text);
+  font-family: Inter, Arial, sans-serif;
+}
+
+.create-page {
+  min-height: 100vh;
+  padding: 70px 7%;
+}
+
+.create-header {
+  max-width: 700px;
+  margin-bottom: 45px;
+}
+
+.eyebrow {
+  margin: 0 0 12px;
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.create-header h1 {
+  margin: 0;
+  font-size: clamp(38px, 4vw, 60px);
+  line-height: 1.05;
+  letter-spacing: -2px;
+}
+
+.subtitle {
+  max-width: 540px;
+  margin-top: 18px;
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.generator-workspace {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.workspace-panel {
+  min-height: 460px;
+  padding: 24px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 22px;
+}
+
+.panel-heading {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.panel-heading span {
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.panel-heading h2 {
+  margin: 0;
+  font-size: 17px;
+}
+
+.upload-area {
+  height: 370px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  border: 1.5px dashed #c9c6e9;
+  border-radius: 16px;
+
+  background: var(--lavender-light);
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.upload-area:hover {
+  border-color: var(--accent);
+  background: #e9e6ff;
+}
+
+.upload-icon {
+  width: 54px;
+  height: 54px;
+
+  display: grid;
+  place-items: center;
+
+  margin-bottom: 18px;
+
+  border-radius: 50%;
+
+  background: var(--surface);
+  color: var(--accent);
+
+  font-size: 30px;
+  font-weight: 300;
+}
+
+.upload-area h3 {
+  margin: 0;
+  font-size: 19px;
+}
+
+.upload-area p {
+  margin: 8px 0 20px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.choose-button {
+  padding: 11px 18px;
+
+  border-radius: 10px;
+
+  background: var(--accent);
+  color: white;
+
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.upload-area small {
+  margin-top: 16px;
+
+  color: var(--muted);
+
+  font-size: 11px;
+  letter-spacing: 1px;
+}
+
+.ascii-placeholder {
+  height: 370px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 16px;
+
+  background: #f4f3fa;
+
+  text-align: center;
+}
+
+.ascii-symbol {
+  margin-bottom: 20px;
+
+  color: var(--accent);
+
+  font-family: "Courier New", monospace;
+  font-size: 42px;
+  font-weight: 700;
+  letter-spacing: -4px;
+}
+
+.ascii-placeholder h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.ascii-placeholder p {
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.image-preview {
+  height: 370px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.image-preview img {
+  width: 100%;
+  height: 300px;
+
+  object-fit: contain;
+
+  border-radius: 14px;
+
+  background: var(--lavender-light);
+}
+
+.file-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding-top: 14px;
+}
+
+.file-info div {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.file-info strong {
+  max-width: 300px;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  font-size: 13px;
+}
+
+.file-info span {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.change-image {
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.generate-area {
+  display: flex;
+  justify-content: flex-end;
+
+  margin-top: 24px;
+}
+
+.generate-button {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 15px 24px;
+
+  border: none;
+  border-radius: 12px;
+
+  background: var(--accent);
+  color: white;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.generate-button:hover:not(:disabled) {
+  background: var(--accent-hover);
+  transform: translateY(-1px);
+}
+
+.generate-button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+@media (max-width: 850px) {
+  .create-page {
+    padding: 45px 5%;
+  }
+
+  .generator-workspace {
+    grid-template-columns: 1fr;
+  }
+
+  .generate-area {
+    justify-content: stretch;
+  }
+
+  .generate-button {
+    width: 100%;
+    justify-content: center;
+  }
+}

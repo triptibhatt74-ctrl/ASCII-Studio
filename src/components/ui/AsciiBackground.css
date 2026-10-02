@@ -1,0 +1,137 @@
+.ascii-background {
+  position: absolute;
+  inset: 0;
+
+  overflow: hidden;
+
+  z-index: 0;
+
+  pointer-events: none;
+}
+
+/* -------------------------------------------------- */
+/* Ambient ASCII field                                 */
+/* -------------------------------------------------- */
+
+.ascii-background__layer {
+  position: absolute;
+
+  top: -10%;
+  left: -10%;
+
+  width: 120%;
+  height: 120%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  animation: ascii-drift 40s linear infinite;
+
+  will-change: transform;
+}
+
+.ascii-background__row {
+  white-space: pre;
+
+  font-size: 0.8125rem;
+  line-height: 1.6;
+  letter-spacing: 0.2em;
+
+  color: var(--color-text-secondary);
+
+  opacity: 0.085;
+}
+
+/* -------------------------------------------------- */
+/* Cursor spotlight                                    */
+/* -------------------------------------------------- */
+
+.ascii-background__spotlight {
+  position: absolute;
+
+  left: -90px;
+  top: -90px;
+
+  width: 180px;
+  height: 180px;
+
+  border-radius: 50%;
+
+  opacity: 0;
+
+  background: radial-gradient(
+    circle,
+    rgba(217, 242, 107, 0.11) 0%,
+    rgba(217, 242, 107, 0.05) 36%,
+    rgba(217, 242, 107, 0.015) 58%,
+    transparent 72%
+  );
+
+  box-shadow:
+    0 0 45px rgba(217, 242, 107, 0.035);
+
+  will-change: transform, opacity;
+
+  transition: opacity 120ms ease-out;
+}
+
+/* Dark mode can carry slightly more glow */
+[data-theme='dark'] .ascii-background__spotlight {
+  background: radial-gradient(
+    circle,
+    rgba(217, 242, 107, 0.12) 0%,
+    rgba(217, 242, 107, 0.055) 38%,
+    rgba(217, 242, 107, 0.016) 60%,
+    transparent 74%
+  );
+}
+
+[data-theme='light'] .ascii-background__spotlight {
+  background: radial-gradient(
+    circle,
+    rgba(122, 145, 36, 0.18) 0%,
+    rgba(122, 145, 36, 0.09) 34%,
+    rgba(122, 145, 36, 0.035) 58%,
+    transparent 74%
+  );
+
+  [data-theme='light'] .ascii-background__row {
+  color: rgba(32, 31, 27, 0.72);
+  opacity: 0.11;
+}
+
+  box-shadow:
+    0 0 36px rgba(122, 145, 36, 0.05);
+}
+/* -------------------------------------------------- */
+/* Ambient drift                                       */
+/* -------------------------------------------------- */
+
+@keyframes ascii-drift {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  50% {
+    transform: translate3d(-1.5%, -1.5%, 0);
+  }
+
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+/* -------------------------------------------------- */
+/* Reduced motion                                      */
+/* -------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .ascii-background__layer {
+    animation: none;
+  }
+
+  .ascii-background__spotlight {
+    display: none;
+  }
+}

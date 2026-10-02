@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { useState } from 'react'
 import heroImg from './assets/hero.png'
 import reactLogo from './assets/react.svg'
@@ -115,6 +116,20 @@ function App() {
 
       <div className="ticks"></div>
       <section id="spacer"></section>
+=======
+import Navbar from './components/layout/Navbar.jsx'
+import Hero from './components/landing/Hero.jsx'
+import Create from './pages/Create'
+import HowItWorks from './components/landing/HowItWorks.jsx'
+
+function App() {
+  return (
+    <>
+      <Navbar />
+      <Hero />
+      <HowItWorks />
+      <Create />
+>>>>>>> origin/payal-frontend
     </>
   )
 }
